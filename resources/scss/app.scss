@@ -6,3 +6,35 @@ $fa-font-path: "../fonts/webfonts" !default;
 @import "~@fortawesome/fontawesome-free/scss/solid";
 @import "~@fortawesome/fontawesome-free/scss/brands";
 
+body{
+    background-color: $orange;
+}
+
+
+main{
+    height:80vh;
+}
+
+.root-color {
+    background-color: $pink;
+}
+
+.root-color a:hover{
+    color:$yellow;
+    transition: 0.5s;
+}
+
+.links{
+    color:$yellow;
+}
+
+.btn-yellow{
+    background-color:$yellow;
+}
+
+#app{
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
