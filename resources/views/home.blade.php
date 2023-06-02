@@ -3,8 +3,8 @@
 
 <div class="jumbotron p-5 mb-4 rounded-3">
     <div class="container py-5">
-        <div class="d-flex align-items-center justify-content-center gap-5">
-            <h1 class="display-5 fw-bold">
+        <div>
+            <h1 class="display-5 fw-bold text-center">
                 Hi! My name is
             </h1>
             <img src="/images/glumia-logos_black.png" alt="" width="400">

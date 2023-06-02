@@ -31,10 +31,31 @@ main{
 .btn-yellow{
     background-color:$yellow;
 }
+.btn-yellow:hover{
+    background-color:$blue;
+}
+.btn-blue{
+    background-color:$blue;
+}
 
 #app{
     height:100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+main{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main p{
+    font-size: 2rem;
+}
+
+footer .links i:hover{
+    color:$blue;
+    transition:0.5s;
 }
