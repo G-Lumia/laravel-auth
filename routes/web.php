@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,7 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(function ()
 {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-    Route::resource('posts', PostController::class)->parameters(['posts' => 'post:slug']);
+    Route::resource('projects', ProjectController::class)->parameters(['projects' => 'project:slug']);
     Route::get('/project', [ProjectController::class, 'edit'])->name('project.edit');
     Route::patch('/project', [ProjectController::class, 'update'])->name('project.update');
     Route::delete('/project', [ProjectController::class, 'destroy'])->name('project.destroy');
