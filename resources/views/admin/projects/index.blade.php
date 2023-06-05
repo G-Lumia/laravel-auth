@@ -41,13 +41,13 @@
                                 <button type='submit' class="btn btn-danger delete-button" data-item-title="{{ $project->slug }}"> <i
                                         class="fa-solid fa-trash"></i></button>
                                     </form>
-                                    @include('partials.popUpDelete')
                                 </div>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
-    {{ $projects->links('vendor.pagination.bootstrap-5') }}
-</div>
-@endsection
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                {{ $projects->links('vendor.pagination.bootstrap-5') }}
+            </div>
+            @include('partials.popUpDelete')
+            @endsection
