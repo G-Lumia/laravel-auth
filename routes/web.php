@@ -22,6 +22,10 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(function ()
 {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('posts', PostController::class)->parameters(['posts' => 'post:slug']);
+    Route::get('/project', [ProjectController::class, 'edit'])->name('project.edit');
+    Route::patch('/project', [ProjectController::class, 'update'])->name('project.update');
+    Route::delete('/project', [ProjectController::class, 'destroy'])->name('project.destroy');
 });
 
 require __DIR__.'/auth.php';
