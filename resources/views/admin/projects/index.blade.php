@@ -38,10 +38,11 @@
                             <form action="{{ route('admin.projects.destroy', $project->slug) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type='submit' class="delete-button" data-item-title="{{ $project->name }}"> <i
+                                <button type='submit' class="btn btn-danger delete-button" data-item-title="{{ $project->slug }}"> <i
                                         class="fa-solid fa-trash"></i></button>
-                            </form>
-                        </div>
+                                    </form>
+                                    @include('partials.popUpDelete')
+                                </div>
                     </td>
                 </tr>
             @endforeach
@@ -49,5 +50,4 @@
     </table>
     {{ $projects->links('vendor.pagination.bootstrap-5') }}
 </div>
-@include('partials.modal-delete')
 @endsection
