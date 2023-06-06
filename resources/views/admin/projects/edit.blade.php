@@ -8,21 +8,20 @@
     </div>
     <form class="mt-5" action="{{ route('admin.projects.update' , $project) }}" method="POST">
         @csrf
-
         @method('PUT')
 
         <div class="mb-3">
             <label for="name">Project Name</label>
-            <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
+            <input type="text" class="form-control" name="name" id="name" value="{{ old('name' , $project->name) }}" >
         </div>
         <div class="mb-3">
             <label for="image">Project Cover Image</label>
-            <input type="url" class="form-control" name="image" id="image" value="{{ old('image') }}">
+            <input type="url" class="form-control" name="image" id="image" value="{{ old('image', $project->image) }}">
 
         </div>
         <div class="mb-3">
             <label for="link">Project Link</label>
-            <input type="url" name="link" id="link"class="form-control" value="{{ old('link') }}">
+            <input type="url" name="link" id="link"class="form-control" value="{{ old('link' , $project->link) }}">
         </div>
         <div class="mt-4">
             <button type="submit" class="btn btn-success">Save</button>
