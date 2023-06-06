@@ -23,7 +23,9 @@
     <div id="app">
         @include('partials.header')
         <main>
-            @yield('content')
+            <div class="wrapper container">
+                @yield('content')
+            </div>
         </main>
         @include('partials.footer')
     </div>

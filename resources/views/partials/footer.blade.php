@@ -1,6 +1,4 @@
-<footer class="root-color">
-    <div>
-        <div class="container d-flex align-items-center justify-content-between py-4">
+<footer class="root-color d-flex align-items-center justify-content-between px-4">
             <div>
                 <button class="text-uppercase fw-semibold btn btn-yellow">
                     Contact me
@@ -17,6 +15,4 @@
                     <i class="fa-brands fa-tiktok"></i>
                 </div>
             </div>
-        </div>
-    </div>
 </footer>
