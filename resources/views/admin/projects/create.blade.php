@@ -14,7 +14,6 @@
         <div class="mb-3">
             <label for="image">Project Cover Image</label>
             <input type="url" class="form-control" name="image" id="image">
-
         </div>
         <div class="mb-3">
             <label for="link">Project Link</label>

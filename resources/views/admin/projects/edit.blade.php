@@ -6,7 +6,7 @@
     <div class="text-center">
         <h1> Edit the project </h1>
     </div>
-    <form class="mt-5" action="{{ route('admin.projects.update' , ($project->id)) }}" method="POST">
+    <form class="mt-5" action="{{ route('admin.projects.update' , $project) }}" method="POST">
         @csrf
 
         @method('PUT')

@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
-use App\Http\Requests\StoreProjecttRequest;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use Doctrine\DBAL\Schema\View;
+use Illuminate\Support\Str;
 
 class ProjectController extends Controller
 {
@@ -39,7 +41,10 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
-
+        $form_data = $request->validated();
+        $form_data['slug'] = Str::slug($form_data['name']); // Generate slug based on project name
+        $newProject = Project::create($form_data);
+        return redirect()->route('admin.projects.index')->with('message', "The comic {$newProject->name} saved with success");
     }
 
     /**
@@ -74,7 +79,10 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project  $project)
     {
-        //
+        $form_data = $request->validated();
+        $form_data['slug'] = Str::slug($form_data['name']); // Generate slug based on project name
+        $project->update($form_data);
+        return view('admin.projects.show', compact('project'));
     }
 
     /**
@@ -87,5 +95,24 @@ class ProjectController extends Controller
     {
         $project->delete();
         return redirect()->route('admin.projects.index')->with('message', "$project->name deleted successfully.");
+    }
+
+    private function validation($data)
+    {
+        $validator = Validator::make($data,
+        [
+            'name' => 'required|max:255|min:3',
+            'image'=> 'required',
+            'link' => 'required'
+        ],
+        [
+                'name.required' => "You must add a name",
+                'name.max' => "name is longer than 255",
+                'name.min' => "name is shorter than 3",
+                'image.required' => "You must add a image",
+                'link.required' => "You must add a link"
+        ])->validate();
+        return $validator;
+
     }
 }
