@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Type;
 use Illuminate\Support\Str;
 
-class CategorySeeder extends Seeder
+class TypeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
