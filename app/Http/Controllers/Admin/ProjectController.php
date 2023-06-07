@@ -30,7 +30,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.projects.create');
+        $typess = Type::all();
+        return view('admin.projects.create', compact('types'));
     }
 
     /**
@@ -44,7 +45,7 @@ class ProjectController extends Controller
         $form_data = $request->validated();
         $form_data['slug'] = Str::slug($form_data['name']); // Generate slug based on project name
         $newProject = Project::create($form_data);
-        return redirect()->route('admin.projects.index')->with('message', "The comic {$newProject->name} saved with success");
+        return redirect()->route('admin.projects.show' , $project->slug)->with('message', "The project {$newProject->name} saved with success");
     }
 
     /**
@@ -67,7 +68,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
+        $types = Type::all();
+        return view('admin.projects.edit', compact('project' , 'types'));
     }
 
     /**
@@ -82,7 +84,7 @@ class ProjectController extends Controller
         $form_data = $request->validated();
         $form_data['slug'] = Str::slug($form_data['name']); // Generate slug based on project name
         $project->update($form_data);
-        return view('admin.projects.show', compact('project'));
+        return view('admin.projects.show', compact('project'))->with('message', "The project {$project->name} edited with success");;
     }
 
     /**
