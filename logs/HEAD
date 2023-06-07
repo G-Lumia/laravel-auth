@@ -1,0 +1,14 @@
+0000000000000000000000000000000000000000 2c66afc4769172d08e946187b844596bfef1f366 G-Lumia <giorgiolumia@gmail.com> 1685705967 +0200	commit (initial): login and register implemented
+2c66afc4769172d08e946187b844596bfef1f366 0000000000000000000000000000000000000000 G-Lumia <giorgiolumia@gmail.com> 1685705978 +0200	Branch: renamed refs/heads/master to refs/heads/main
+0000000000000000000000000000000000000000 2c66afc4769172d08e946187b844596bfef1f366 G-Lumia <giorgiolumia@gmail.com> 1685705978 +0200	Branch: renamed refs/heads/master to refs/heads/main
+2c66afc4769172d08e946187b844596bfef1f366 a4bef2a4bdfb1ca579487bf3a5bed2e692e91f70 G-Lumia <giorgiolumia@gmail.com> 1685711822 +0200	commit: fixed home page style
+a4bef2a4bdfb1ca579487bf3a5bed2e692e91f70 1cbe6b0a4ca148a43d09fac06372812e6f0bb2e9 G-Lumia <giorgiolumia@gmail.com> 1685714268 +0200	commit: fixed style of login, register
+1cbe6b0a4ca148a43d09fac06372812e6f0bb2e9 37bad049b8f2ce64edaf86a393419a6d38027fc0 G-Lumia <giorgiolumia@gmail.com> 1685964055 +0200	commit: data for seeder
+37bad049b8f2ce64edaf86a393419a6d38027fc0 fdeaa8b22674fc43869e8ab2cf1ca0e9beea0b8f G-Lumia <giorgiolumia@gmail.com> 1685965834 +0200	commit: base CRUD, migration and seeder
+fdeaa8b22674fc43869e8ab2cf1ca0e9beea0b8f cbef6f153bcdf4b3afd979d65c120c4b5a631a34 G-Lumia <giorgiolumia@gmail.com> 1685969173 +0200	commit: vendor and pages created
+cbef6f153bcdf4b3afd979d65c120c4b5a631a34 ad2919b95838512790e1ee7742a399e59f449f7f G-Lumia <giorgiolumia@gmail.com> 1685972142 +0200	commit: this pop up is ruining my day
+ad2919b95838512790e1ee7742a399e59f449f7f 38275bfcbe967bd8e02b6e6615b9c970f2db2947 G-Lumia <giorgiolumia@gmail.com> 1685972206 +0200	commit: this damn pop up is not working
+38275bfcbe967bd8e02b6e6615b9c970f2db2947 9987cce54763855f80e6d653feaf1264bf33e020 G-Lumia <giorgiolumia@gmail.com> 1686041633 +0200	commit: style and js fixed
+9987cce54763855f80e6d653feaf1264bf33e020 d65a8d2588fa7d796ed55132e9ac030bc0754112 G-Lumia <giorgiolumia@gmail.com> 1686044473 +0200	commit: create and edit page fixed
+d65a8d2588fa7d796ed55132e9ac030bc0754112 55fac16ab63984332b15c726d4515917eab2843e G-Lumia <giorgiolumia@gmail.com> 1686052534 +0200	commit: create and update integrated
+55fac16ab63984332b15c726d4515917eab2843e 4bd110cada436b2b7a91490ffd09b65d0cbe1f13 G-Lumia <giorgiolumia@gmail.com> 1686053426 +0200	commit: fixed old value in edit

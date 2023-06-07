@@ -1,0 +1,105 @@
+@use './partials/variables' as *;
+@import '~bootstrap/scss/bootstrap';
+$fa-font-path: "../fonts/webfonts" !default;
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+
+body{
+    background-color: $orange;
+}
+
+
+main{
+    height:80vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper{
+    overflow-y: scroll;
+    height:100%;
+}
+.root-color {
+    background-color: $pink;
+}
+
+.root-color a:hover{
+    color:$yellow;
+    transition: 0.5s;
+}
+
+.links{
+    color:$yellow;
+}
+
+.btn-yellow{
+    background-color:$yellow;
+}
+.btn-yellow:hover{
+    background-color:$blue;
+}
+.btn-blue{
+    background-color:$blue;
+}
+
+#app{
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main p{
+    font-size: 2rem;
+}
+
+footer .links i:hover{
+    color:$blue;
+    transition:0.5s;
+}
+
+::-webkit-scrollbar {
+    width: 1px;
+  }
+
+  footer,header{
+    width:100%;
+    margin:0;
+    padding:0;
+    height: 10vh;
+  }
+
+  .homepage a{
+    color:black;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 1.4rem;
+  }
+
+  .homepage a:hover{
+    color:$blue;
+    transition: 0.5s;
+  }
+
+  .link{
+    color:black;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 1.2rem;
+  }
+
+  .link:hover{
+    color:$blue;
+    transition: 0.5s;
+  }
+
+  .create-btn{
+    background-color: $blue;
+  }
+
+  .thumb{
+    max-width:500px;
+  }
