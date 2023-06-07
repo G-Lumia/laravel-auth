@@ -26,7 +26,8 @@ class StoreProjectRequest extends FormRequest
         return [
             'name' => 'required|max:255|min:3',
             'image'=> 'required',
-            'link' => 'required'
+            'link' => 'required',
+            'type_id' => 'required'
         ];
     }
 

@@ -22,7 +22,7 @@
                         <img class="card-img-top"src="{{ $project->image }}" alt="{{ $project->name }}">
                         <div class="mt-3 d-flex gap-3">
                             <h4>
-                                Type : {{ $project->type ? $project->type->name : 'Typeless' }}
+                                Type : {{ $project->type_id ? $project->type->name : 'Typeless' }}
                             </h4>
                         </div>
                         <div class="mt-3">
