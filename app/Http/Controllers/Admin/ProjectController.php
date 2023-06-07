@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
+use App\Models\Type;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
@@ -30,7 +31,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        $typess = Type::all();
+        $types = Type::all();
         return view('admin.projects.create', compact('types'));
     }
 
@@ -45,7 +46,7 @@ class ProjectController extends Controller
         $form_data = $request->validated();
         $form_data['slug'] = Str::slug($form_data['name']); // Generate slug based on project name
         $newProject = Project::create($form_data);
-        return redirect()->route('admin.projects.show' , $project->slug)->with('message', "The project {$newProject->name} saved with success");
+        return redirect()->route('admin.projects.index' , $newProject->slug)->with('message', "The project {$newProject->name} saved with success");
     }
 
     /**

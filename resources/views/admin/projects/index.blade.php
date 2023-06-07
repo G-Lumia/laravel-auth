@@ -20,6 +20,11 @@
                     </h4>
                     <div class="card-body mt-4">
                         <img class="card-img-top"src="{{ $project->image }}" alt="{{ $project->name }}">
+                        <div class="mt-3 d-flex gap-3">
+                            <h4>
+                                Type : {{ $project->type ? $project->type->name : 'Typeless' }}
+                            </h4>
+                        </div>
                         <div class="mt-3">
                             <a href="{{ $project->link }}"> Github Page </a>
                         </div>

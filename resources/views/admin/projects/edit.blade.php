@@ -23,6 +23,18 @@
             <label for="link">Project Link</label>
             <input type="url" name="link" id="link"class="form-control" value="{{ old('link' , $project->link) }}">
         </div>
+        <div class="mb-3">
+            <label for="type_id">Type</label>
+            <select name="type_id" id="type_id" class="form-control">
+                <option value="">Choose a type </option>
+                @foreach ($types as $type)
+                    <option value="{{ $type->id }}"
+                        {{ $type->id == old('type_id', $project->type) ? 'selected' : '' }}>
+                        {{ $type->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
         <div class="mt-4">
             <button type="submit" class="btn btn-success">Save</button>
             <button type="reset" class="btn btn-primary">Reset</button>
