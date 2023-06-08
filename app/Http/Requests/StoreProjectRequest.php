@@ -27,7 +27,8 @@ class StoreProjectRequest extends FormRequest
             'name' => 'required|max:255|min:3',
             'image'=> 'required',
             'link' => 'required',
-            'type_id' => 'required'
+            'type_id' => 'required',
+            'technologies' => 'nullable|exists:technologies,id'
         ];
     }
 

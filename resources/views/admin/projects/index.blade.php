@@ -25,6 +25,11 @@
                                 Type : {{ $project->type_id ? $project->type->name : 'Typeless' }}
                             </h4>
                         </div>
+                        @foreach ($project->technologies as $technology)
+                            <a href="{{ route('admin.technologies.show', $technology->slug) }}" class="badge rounded-pill text-bg-info">
+                                <img src="{{ $technology->image }}" alt="{{ $technology->name }}">
+                            </a>
+                        @endforeach
                         <div class="mt-3">
                             <a href="{{ $project->link }}"> Github Page </a>
                         </div>

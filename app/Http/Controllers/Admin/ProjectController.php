@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Project;
 use App\Models\Type;
+use App\Models\Technologies;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
@@ -32,7 +33,8 @@ class ProjectController extends Controller
     public function create()
     {
         $types = Type::all();
-        return view('admin.projects.create', compact('types'));
+        $technologies = Technologies::all();
+        return view('admin.projects.create', compact('types' , 'technologies'));
     }
 
     /**
@@ -46,6 +48,11 @@ class ProjectController extends Controller
         $form_data = $request->validated();
         $form_data['slug'] = Str::slug($form_data['name']); // Generate slug based on project name
         $newProject = Project::create($form_data);
+
+        if ($request->has('technologies')) {
+            $post->tags()->attach($request->tags);
+        }
+
         return redirect()->route('admin.projects.index' , $newProject->slug)->with('message', "The project {$newProject->name} saved with success");
     }
 
@@ -70,7 +77,8 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $types = Type::all();
-        return view('admin.projects.edit', compact('project' , 'types'));
+        $technologies = Technologies::all();
+        return view('admin.projects.edit', compact('project' , 'types' , 'technologies'));
     }
 
     /**
@@ -85,7 +93,13 @@ class ProjectController extends Controller
         $form_data = $request->validated();
         $form_data['slug'] = Str::slug($form_data['name']); // Generate slug based on project name
         $project->update($form_data);
-        return view('admin.projects.show', compact('project'))->with('message', "The project {$project->name} edited with success");;
+        if ($request->has('technologies'))
+        {
+            $project->technologies()->sync($request->technologies);
+        }
+        else
+            $project->technologies()->sync([]);
+        return view('admin.projects.show', compact('project'))->with('message', "The project {$project->name} edited with success");
     }
 
     /**

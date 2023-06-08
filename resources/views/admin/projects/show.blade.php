@@ -5,6 +5,15 @@
     <h1>{{ $project->name }}</h1>
     <img class="thumb" src="{{ $project->image }}" alt="{{ $project->name }}">
     <h4> Type : {{ $project->type ? $project->type->name : 'Typeless' }} </h4>
+    @if ($projects->technologies && count($project->technologies) > 0)
+        <div>
+            @foreach ($project->technologies as $technology)
+                <a href="{{ route('admin.technologies.show', $technology->slug) }}" class="badge rounded-pill text-bg-info">
+                    <img src="{{ $technology->image }}" alt="{{ $technology->name }}">
+                </a>
+            @endforeach
+        </div>
+    @endif
     <div class="mt-3">
         <a class="link" href="{!! $project->link !!}"> {!! $project->link !!} </a>
         <div class="d-flex gap-3 justify-content-center mt-3">
