@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Project;
 use App\Models\Type;
-use App\Models\Technologies;
+use App\Models\Technology;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
@@ -33,7 +33,7 @@ class ProjectController extends Controller
     public function create()
     {
         $types = Type::all();
-        $technologies = Technologies::all();
+        $technologies = Technology::all();
         return view('admin.projects.create', compact('types' , 'technologies'));
     }
 
@@ -50,7 +50,7 @@ class ProjectController extends Controller
         $newProject = Project::create($form_data);
 
         if ($request->has('technologies')) {
-            $post->tags()->attach($request->tags);
+            $project->technologies()->attach($request->technologies);
         }
 
         return redirect()->route('admin.projects.index' , $newProject->slug)->with('message', "The project {$newProject->name} saved with success");
@@ -77,7 +77,7 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $types = Type::all();
-        $technologies = Technologies::all();
+        $technologies = Technology::all();
         return view('admin.projects.edit', compact('project' , 'types' , 'technologies'));
     }
 

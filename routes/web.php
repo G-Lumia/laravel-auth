@@ -27,7 +27,7 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('types', TypeController::class)->parameters(['types' => 'type:slug']);
     Route::resource('projects', ProjectController::class)->parameters(['projects' => 'project:slug']);
-    Route::resource('tags', TechnologyController::class)->parameters(['technologies' => 'tag:slug']);
+    Route::resource('technologies', TechnologyController::class)->parameters(['technologies' => 'tag:slug']);
 });
 
 require __DIR__.'/auth.php';
