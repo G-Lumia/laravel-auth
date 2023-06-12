@@ -4,7 +4,7 @@ return [
     "technologies" => [
         [
             "name" => "HTML",
-            "image" => "html-logo.png",
+            "image" => "html-logo.jpg",
             "description" => "HTML (HyperText Markup Language) è il linguaggio standard per la creazione di pagine web. Viene utilizzato per strutturare il contenuto delle pagine web utilizzando elementi come titoli, paragrafi, tabelle e immagini."
         ],
         [
@@ -44,7 +44,7 @@ return [
         ],
         [
             "name" => "SASS (SCSS)",
-            "image" => "sass-logo.png",
+            "image" => "sass-logo.jpg",
             "description" => "SASS (Syntactically Awesome Style Sheets) è un'estensione di CSS che aggiunge funzionalità avanzate come le variabili, i mixin e le strutture di controllo. La versione SCSS è la sintassi più recente e permette di utilizzare la familiarità del CSS tradizionale con l'aggiunta di potenti funzionalità."
         ]
     ]
